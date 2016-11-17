@@ -8,6 +8,7 @@ bestmodelf="devnnmod.asc"
 maincmd="th adatrain.lua | tee "
 testcmd="./fulltest.sh"
 
+#change the detectwd while you set cycs
 detectwd="new minimal dev error found"
 testwd="=== F MEASURE:	"
 

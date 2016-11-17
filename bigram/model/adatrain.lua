@@ -173,7 +173,6 @@ function train()
 			--print("epoch:"..tostring(epochs)..",lr:"..lr..",Tra:"..erate)
 			local modsavd=false
 			if edevrate<mindeverrate then
-				print("new minimal dev error found,save model")
 				mindeverrate=edevrate
 				if cycs then
 					nnmod:float()
@@ -188,12 +187,12 @@ function train()
 					end
 				end
 				modsavd=true
+				print("new minimal dev error found, model saved")
 			end
 			if erate<minerrate then
 				minerrate=erate
 				aminerr=1
 				if not modsavd then
-					print("new minimal error found,save model")
 					if cycs then
 						nnmod:float()
 						bnnmod=nnmod:clone()
@@ -206,6 +205,7 @@ function train()
 							storemini=1
 						end
 					end
+					print("new minimal error found, model saved")
 				end
 			else
 				if aminerr>=expdecaycycle then
